@@ -116,21 +116,38 @@ $(function(){
 		$(".campus_find .store dt a").removeClass("active");
 	});
 
-	// banner
-	var n2=0;
-	var pos=0;
+	// notice
+	var n=0;
 
-	$(".small_controlls li").click(function(e){
+	$(".main_tab a").click(function(e){
 		e.preventDefault();
-		n2=$(this).index();
+		n=$(this).parent().index();
+		$(".main_tab a").removeClass("on");
+		$(this).addClass("on");
 
-		pos=-1*n2*368;
-		$(".campus_wrap_moving ul").animate({left:pos}, 300);
-
-		$(".small_controlls li a").removeClass("active");
-		$(this).find("a").addClass("active");
+		$(".main_panel > div").removeClass("active");
+		$(".main_panel > div").eq(n).addClass("active");
 	});
 
+	// video
+	var video=document.getElementById("my_video");
+
+	$(".control").click(function(e){
+		e.preventDefault();
+		$(this).fadeOut(300);
+		video.play();
+	});
+	$("#my_video").click(function(){
+		$(".control").fadeIn(300);
+		video.pause();
+	});
+	video.addEventListener("ended", function(){
+		$(".control").fadeIn(300);
+		video.pause();
+		video.currentTime=0;
+	});
+
+	// footer banner
 	var w=127;
 	var amount=0;
 
@@ -158,4 +175,12 @@ $(function(){
 			$(this).css({left:amount});
 		});
 	}
+
+	//tab
+	$(".close").click(function(e){
+		e.preventDefault();
+		$(".popup").fadeOut(300);
+		$(".dim").fadeOut(300);
+		$("body").addClass("static");
+	});
 });
