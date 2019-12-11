@@ -14,7 +14,7 @@ $(function(){
 		e.preventDefault();
 
 		if($(this).parent().hasClass("active") == false){
-			$("#GNB > ul > li > a").removeClass("active");
+			$("#GNB > ul > li").removeClass("active");
 			$(this).parent().addClass("active");
 
 			$(".sub").slideUp(300);
@@ -72,4 +72,24 @@ $(function(){
 	}, 6000);
 
 	$(window).resize(newLayout);
+
+	// popup
+	$(".close").click(function(e){
+		e.preventDefault();
+		$(".popup").fadeOut(300);
+		$(".dim2").fadeOut(300);
+	});
+
+	// close button
+	$(".close_check").click(function(e){
+		e.preventDefault();
+		$(this).toggleClass("checked");
+
+		if($(this).hasClass("checked")){
+			$(this).next("input").prop("checked", true);
+		}
+		else{
+			$(this).next("input").prop("checked", false);
+		}
+	});
 });

@@ -121,7 +121,7 @@ body.static {
 	width: 200px;
 	height: 100%;
 	overflow-y: auto;
-	background-color: #660942;
+	background-color: #ffe7e5;
 	transition: right 0.3s;
 }
 #GNB.active {
@@ -137,25 +137,28 @@ body.static {
 	background: url(../images/mb_close.png) no-repeat 0 0;
 }
 #GNB > ul {
-	margin: 50px 0 0 30px;
+	margin: 50px 0 0 20px;
 }
 #GNB > ul > li > a {
 	display: block;
 	padding: 20px 0;
-	color: #fff;
+	color: #333;
 	font-weight: 600;
 	font-size: 1.125em;
 }
 #GNB > ul > li.active > a {
-	text-decoration: underline;
+	color: #660942;
 }
 #GNB ul .sub {
 	display: none;
+	padding: 10px 10px;
+	margin-right: 20px;
+	background-color: #fff;
 }
 #GNB ul .sub a {
 	display: block;
-	padding: 5px 0;
-	color: rgba(256,256,256,0.5);
+	padding: 5px 0 5px 5px;
+	color: #333;
 	font-size: 0.875em;
 }
 #GNB .info {
@@ -164,7 +167,7 @@ body.static {
 	bottom: 0;
 	width: 100%;
 	text-align: center;
-	border-top: 1px solid #fff;
+	border-top: 1px solid #333;
 }
 #GNB .info li {
 	display: inline-block;
@@ -179,7 +182,7 @@ body.static {
 	z-index: 1150;
 	width: 1px;
 	height: 20px;
-	background-color: #fff;
+	background-color: #333;
 }
 #GNB .info li:first-child::before {
 	display: none;
@@ -188,9 +191,14 @@ body.static {
 	display: block;
 	padding: 0 20px;
 	font-size: 0.875em;
-	color: #fff;
+	color: #333;
 }
 
+@media only screen and (orientation:landscape){
+	#GNB .info {
+		display: none;
+	}
+}
 /* dim */
 .dim {
 	display: none;
@@ -405,4 +413,71 @@ input[type=submit] {
 	font-size: 1.75em;
 	font-weight: 800;
 	color: #660942;
+}
+/* popup */
+.popup {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	z-index: 1000;
+	width: 300px;
+	height: 400px;
+	margin-left: -150px;
+	margin-top: -180px;
+}
+.popup .image {
+	height: 360px;
+}
+.popup .text {
+	text-align: center;
+	width: 300px;
+	height: 40px;
+}
+.popup .text form span,
+.popup .text .right a {
+	font-size: 14px;
+}
+.popup .close_wrap {
+	margin-top: 5px;
+	width: 100%;
+	height: 30px;
+	text-align: center;
+	border: 1px solid #fff;
+}
+.popup .close_wrap .close {
+	width: 100%;
+	color: #fff;
+	line-height: 30px;
+}
+.popup .checkbox {
+	text-align: right;
+}
+.popup .close_check {
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+	vertical-align: middle;
+	background: url(../images/spr_form.png) no-repeat -80px 0;
+}
+.popup .close_check.checked {
+	background-position: -107px 0;
+}
+.popup .checkbox input[type=checkbox]{
+	display: none;
+}
+.popup .checkbox span {
+	display: inline-block;
+	color: #eaeaea;
+	font-size: 12px;
+}
+.dim2 {
+	position: fixed;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	z-index: 900;
+	width: 100%;
+	height: 100vh;
+	background-color: rgba(0,0,0,0.7);
 }

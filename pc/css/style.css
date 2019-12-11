@@ -386,8 +386,10 @@ input[type=button]{
 	top: 40px;
 	z-index: 1000;
 	width: 220px;
+	height: 80px;
+	overflow-y: auto;
 	background-color: #fff;
-	border: 1px solid #660942;
+	border: 1px solid #ffe7e5;
 }
 .campus_find .area dl dd a {
 	display: block;
@@ -433,6 +435,8 @@ input[type=button]{
 	top: 40px;
 	z-index: 1000;
 	width: 220px;
+	height: 80px;
+	overflow-y: auto;
 	background-color: #fff;
 	border: 1px solid #660942;
 }
@@ -723,44 +727,42 @@ input[type=button]{
 	left: 50%;
 	top: 50%;
 	z-index: 1000;
-	width: 500px;
-	height: 650px;
-	margin-left: -250px;
-	margin-top: -300px;
+	width: 300px;
+	height: 400px;
+	margin-left: -150px;
+	margin-top: -180px;
 }
 .popup .image {
-	height: 600px;
+	height: 360px;
 }
 .popup .text {
+	width: 300px;
+	height: 40px;
 	text-align: center;
-	width: 500px;
-	height: 50px;
 	background-color: #fff;
-}
-.popup .text form span,
-.popup .text .right a {
-	display: block;
-	padding: 0 20px;
-	font-size: 18px;
 }
 .popup .text form {
 	float: left;
 	width: 50%;
-	height: 50px;
-	line-height: 50px;
-	border-right: 1px solid #000;
-	box-sizing: border-box;
+	height: 40px;
 }
+input#check {
+	vertical-align: middle;
+}
+input[type=checkbox],
 .popup .text form span {
-	display: inline-block;
+	cursor: pointer;
 }
 .popup .text .right {
 	float: left;
 	width: 50%;
-	height: 50px;
+	height: 40px;
 }
+.popup .text form span,
 .popup .text .right a {
-	line-height: 50px;
+	font-size: 12px;
+	color: #333;
+	line-height: 40px;
 }
 .dim {
 	position: fixed;
