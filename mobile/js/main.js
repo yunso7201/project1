@@ -26,20 +26,9 @@ $(function(){
 		}
 	});
 
-	var n=0;
-	var pos=0;
-
-	setInterval(function(){
-		if(n < 2){
-			n=n+1;
-		}
-		else{
-			n=0;
-		}
-
-		pos=-1*n*(100);
-		$("#start .keyvisual ul").css({"left" : pos+"%"});
-	}, 5000);
+	$(".keyvisual").mobileDragEvent2({
+		total: 3
+	});
 
 	// new
 	var newphotoH;

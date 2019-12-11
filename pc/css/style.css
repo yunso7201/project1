@@ -619,15 +619,16 @@ input[type=button]{
 }
 .rel_site .rel_site_inner .site_wrapper ul {
 	position: absolute;
-	width: 900px;
+	width: 1800px;
 	height: 64px;
 }
 .rel_site .rel_site_inner .site_wrapper li {
 	position: relative;
-	padding: 0 26px;
+	padding: 0 10px;
 	float: left;
-	width: 127px;
+	width: 180px;
 	height: 64px;
+	box-sizing: border-box;
 }
 .rel_site .rel_site_inner .site_wrapper li a {
 	display: block;
@@ -723,6 +724,7 @@ input[type=button]{
 }
 /* popup */
 .popup {
+	display: none;
 	position: absolute;
 	left: 50%;
 	top: 50%;
@@ -765,6 +767,7 @@ input[type=checkbox],
 	line-height: 40px;
 }
 .dim {
+	display: none;
 	position: fixed;
 	left: 0;
 	top: 0;

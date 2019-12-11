@@ -154,16 +154,16 @@ $(function(){
 	});
 
 	// footer banner
-	var w=127;
+	var w=180;
 	var amount=0;
 
 	$(".prev").click(function(e){
 		e.preventDefault();
-		rightMoving();
+		leftMoving();
 	});
 	$(".next").click(function(e){
 		e.preventDefault();
-		leftMoving();
+		rightMoving();
 	});
 
 	function rightMoving(){
@@ -196,13 +196,13 @@ $(function(){
 		if($("input[name=todayClose]").is(":checked")){
 			setCookie("close", "yes", 1);
 		}
-		$(".popup").fadeOut(300);
+		$(".popup, .dim").fadeOut(300); // 2019-12-11
 	});
 
 	if(GetCookie("close") == "yes"){
 	}
 	else{
-		$(".popup").fadeIn(300);
+		$(".popup, .dim").fadeIn(300); // 2019-12-11
 	}
 
 	function setCookie(name, value, expiredays){
