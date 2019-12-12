@@ -1,28 +1,4 @@
 $(function(){
-	// gnb
-	$("#GNB > .GNB_inner > ul > li").hover(
-		function(){
-			$("#GNB > .GNB_inner > ul").addClass("over");
-		},
-		function(){
-			$("#GNB > .GNB_inner > ul").removeClass("over");
-		}
-	);
-
-	$("#GNB > .GNB_inner > ul > li:first-child > a").focusin(function(){
-		$("#GNB > .GNB_inner > ul").addClass("over");
-	});
-	$("#GNB li:last-child li:last-child").focusout(function(){
-		$("#GNB > .GNB_inner > ul").removeClass("over");
-	});
-
-	$("#GNB > .GNB_inner > ul > li > a").focusin(function(){
-		$(this).addClass("over");
-	});
-	$("#GNB li li:last-child").focusout(function(){
-		$(this).parent().prev("a").removeClass("over");
-	});
-
 	// slide
 	var keyvisual={
 		key1 : "keyvisual1.jpg",
