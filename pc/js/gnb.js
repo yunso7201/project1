@@ -1,29 +1,3 @@
-// $(function(){
-// 	// gnb
-// 	$("#GNB > .GNB_inner > ul > li").hover(
-// 		function(){
-// 			$("#GNB > .GNB_inner > ul").addClass("over");
-// 		},
-// 		function(){
-// 			$("#GNB > .GNB_inner > ul").removeClass("over");
-// 		}
-// 	);
-//
-// 	$("#GNB > .GNB_inner > ul > li:first-child > a").focusin(function(){
-// 		$("#GNB > .GNB_inner > ul").addClass("over");
-// 	});
-// 	$("#GNB li:last-child li:last-child").focusout(function(){
-// 		$("#GNB > .GNB_inner > ul").removeClass("over");
-// 	});
-//
-// 	$("#GNB > .GNB_inner > ul > li > a").focusin(function(){
-// 		$(this).addClass("over");
-// 	});
-// 	$("#GNB li li:last-child").focusout(function(){
-// 		$(this).parent().prev("a").removeClass("over");
-// 	});
-// });
-
 window.addEventListener("load", function(){
 	var gnb=document.getElementById("GNB");
 
@@ -51,15 +25,24 @@ window.addEventListener("load", function(){
 		});
 
 		var depth2Li=depth1Li[j].children[1].children;
+		console.log(depth2Li);
 
 		if(j == 5){
 			for(var k=0; k<depth2Li.length; k++){
 				depth2Li[2].addEventListener("focusout", function(){
 					gnbUl.classList.remove("over");
 				});
-				// 	$("#GNB li li:last-child").focusout(function(){
-				// 		$(this).parent().prev("a").removeClass("over");
-				// 	});
+			}
+		}
+
+		for(var h=0; h<depth2Li.length; h++){
+			if(h == (depth2Li.length-1)){
+				depth2Li[h].addEventListener("focusout", function(e){
+					// console.log("focusout!!");
+					console.log(e.currentTarget);
+					var link=e.currentTarget.parentElement.previousElementSibling;
+					link.classList.remove("over");
+				});
 			}
 		}
 	}
