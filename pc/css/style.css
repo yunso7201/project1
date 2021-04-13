@@ -522,9 +522,9 @@ input[type=button]{
 .main_cont_wrap .main_bottom .main_panel > div.active {
 	display: block;
 }
-.main_cont_wrap .main_bottom .main_panel .media {
-	/* display: none; */
-}
+/* .main_cont_wrap .main_bottom .main_panel .media {
+	display: none;
+} */
 .main_cont_wrap .main_bottom .main_panel .media li a {
 	display: block;
 	width: 220px;
